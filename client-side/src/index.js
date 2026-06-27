@@ -15,15 +15,13 @@ import { BrowserRouter } from 'react-router-dom';
 import { GraphQLWsLink } from '@apollo/client/link/subscriptions';
 import { createClient } from 'graphql-ws';
 
-const HOSTNAME = process.env.HOSTNAME || "https://memory-game-test.onrender.com";
-
-const PORT = process.env.PORT || 4000;
+const HOSTNAME = `https://${process.env.HOSTNAME}` || "https://memory-game-test.onrender.com";
 
 const httpLink = new HttpLink({
-  uri: `https://memory-game-test.onrender.com/api/gql/`,
+  uri: `https://${HOSTNAME}/api/gql/`,
 })
 const wsLink = new GraphQLWsLink(createClient({
-  url: `wss://memory-game-test.onrender.com/api/gql`,
+  url: `wss://${HOSTNAME}/api/gql`,
 }));
 
 const splitLink = split(
