@@ -2,10 +2,11 @@ body {
   margin: 0;
   font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
   background:
-    radial-gradient(circle at top left, rgba(125, 211, 252, 0.24), transparent 30%),
-    linear-gradient(135deg, #f8fbff 0%, #eef2ff 100%);
+    radial-gradient(circle at top left, var(--bg-gradient-light), transparent 30%),
+    var(--bg-gradient-end);
   min-height: 100vh;
-  color: #111827;
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 * {
