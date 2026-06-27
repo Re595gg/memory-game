@@ -15,13 +15,11 @@ import { BrowserRouter } from 'react-router-dom';
 import { GraphQLWsLink } from '@apollo/client/link/subscriptions';
 import { createClient } from 'graphql-ws';
 
-const HOSTNAME = `https://${process.env.HOSTNAME}` || `${window.location.hostname}`;
-
 const httpLink = new HttpLink({
-  uri: `https://${HOSTNAME}/api/gql/`,
+  uri: `https://${window.location.hostname}/api/gql/`,
 })
 const wsLink = new GraphQLWsLink(createClient({
-  url: `wss://${HOSTNAME}/api/gql`,
+  url: `wss://${window.location.hostname}/api/gql`,
 }));
 
 const splitLink = split(
