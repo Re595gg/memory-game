@@ -1,3 +1,18 @@
-/* i {
-  font-style: normal; 
-} */
+body {
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(125, 211, 252, 0.24), transparent 30%),
+    linear-gradient(135deg, #f8fbff 0%, #eef2ff 100%);
+  min-height: 100vh;
+  color: #111827;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input {
+  font: inherit;
+}
